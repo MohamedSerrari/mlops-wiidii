@@ -1,0 +1,16 @@
+{
+  "exclusive_classes":true,
+  "architecture":"simple_cnn",
+  "labels":[
+    "find-train",
+    "irrelevant",
+    "find-flight",
+    "find-restaurant",
+    "purchase",
+    "find-around-me",
+    "provide-showtimes",
+    "find-hotel"
+  ],
+  "pretrained_vectors":null,
+  "pretrained_dims":null
+}
