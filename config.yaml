@@ -1,0 +1,4 @@
+MODEL_PATH: model_save
+PORT: 5050
+HOST: 127.0.0.2
+DEBUG: True
