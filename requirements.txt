@@ -2,3 +2,4 @@ Spacy
 Flask
 fastapi
 uvicorn[standard]
+locust
