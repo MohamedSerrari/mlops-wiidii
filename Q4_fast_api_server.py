@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 import spacy
 
-app = FastAPI()
+app = FastAPI(title="Idiwii intention classification",
+              description="Using NLU in order to understand and classify a user's intention",
+              version="1.0")
+
 nlu = spacy.load("./model_save")
 
 @app.get("/api/intent/")
