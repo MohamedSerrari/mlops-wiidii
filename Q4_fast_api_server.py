@@ -17,4 +17,4 @@ async def intent_api(sentence: str):
     return predict.cats
 
 if __name__ == "__main__":
-    uvicorn.run("Q4_fast_api_server:app", port=8000, reload=True, access_log=False)
+    uvicorn.run(app, host='0.0.0.0', port=8000, reload=False, access_log=False)
