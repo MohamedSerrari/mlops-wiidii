@@ -8,5 +8,5 @@ COPY . .
 COPY --from=tmp-build-env /app/deps /app/deps
 ENV PYTHONPATH=/app/deps:$PYTHONPATH
 
-EXPOSE 8000
+EXPOSE 8080
 CMD ["python3", "Q4_fast_api_server.py"]

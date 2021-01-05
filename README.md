@@ -20,13 +20,13 @@ docker build --tag intentclassication .
 
 Run docker image
 ```shell
-docker run -d -p 8000:8000 intentclassication
+docker run -d -p 8080:8080 intentclassication
 ```
 
-Server is now listening on http://localhost:8000.
+Server is now listening on http://localhost:8080.
 
-- To check documentation of the API, check [http://localhost:8000/docs](http://localhost:8000/docs)
-- To test the API, check [http://localhost:8000/api/intent/?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives](http://localhost:8000/api/intent/?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives)
+- To check documentation of the API, check [http://localhost:8080/docs](http://localhost:8080/docs)
+- To test the API, check [http://localhost:8080/api/intent/?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives](http://localhost:8080/api/intent/?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives)
 
 The image is also available on DockerHub: [link](https://hub.docker.com/repository/docker/csj0oe/mlops-wiidii)
 
