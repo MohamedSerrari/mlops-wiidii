@@ -2,14 +2,32 @@
 
 ## This repo contains multiple notebooks and files dealing with the problematics we faced while creating an NLU API for intent classification.
 
-Q1. Analysing the training and evaluation data.
+### Q1. Analysing the training and evaluation data.
 
-Q2. Evaluating a pretrained model.
+Check this notebook : [Q1_data_analysis.ipynb](Q1_data_analysis.ipynb)
 
-Q3. Training and testing our own pipeline using spaCy.
+### Q2. Evaluating a pretrained model.
 
+Check this notebook : [Q1_evaluating_model.ipynb](Q1_evaluating_model.ipynb)
+
+### Q3. Training and testing our own pipeline using spaCy.
+
+The training script is in this notebook : [Q3_Train_SpaCy_Model.ipynb](Q3_Train_SpaCy_Model.ipynb)
+
+The evaluation script is in this notebook : [Q3_Test_SpaCy_Model.ipynb](Q3_Test_SpaCy_Model.ipynb)
+
+Training results
+```
 LOSS       P        R        F1
 0.096    0.860    0.857    0.858
+```
+
+Evaluation results
+```
+  P  	  R  	  F1
+0.826	0.824	0.825
+```
+
 
 ### Q4. Using FastAPI web framework to provide APIs to our intention model.
 
@@ -28,7 +46,7 @@ docker run -d -p 8000:8000 intentclassication
 Server is now listening on http://localhost:8000.
 
 - To check documentation of the API, check [http://localhost:8080/docs](http://localhost:8080/docs)
-- To test the API, check [http://localhost:8080/api/intent?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives](http://localhost:8080/api/intent/?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives)
+- To test the API, check [http://localhost:8080/api/intent?sentence=une%phrase](http://localhost:8080/api/intent/?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives)
 
 <!-- ![Testing API](images/testing1.PNG =250) -->
 <img src="images/testing.png" width="600">
