@@ -1,20 +1,31 @@
 # Creating NLU API for intent classification
 
-## This repo contains multiple notebooks and files dealing with the problematics we faced while creating an NLU API for intent classification.
+## This repo contains multiple notebooks and scripts dealing with the problematics we faced while creating an NLU API for intent classification.
 
 ### Q1. Analysing the training and evaluation data.
+
+In this part we analyse the training and testing sets.
+The goal here is to visualise the distributions of each class in order to get a better understanding of our data.
 
 Check this notebook : [Q1_data_analysis.ipynb](Q1_data_analysis.ipynb)
 
 ### Q2. Evaluating a pretrained model.
 
+In order to evaluate the performance of the model in provided docker image,
+we created a python notebook that calls the api using the sentences from the [testing set](data/testing_set.json)
+and stores the responses in the file [testing_model_predictions.json](data/testing_model_predictions.json)
+
 Check this notebook : [Q1_evaluating_model.ipynb](Q1_evaluating_model.ipynb)
 
 ### Q3. Training and testing our own pipeline using spaCy.
 
+We chose to use spaCy for our intent classification model.
+
 The training script is in this notebook : [Q3_Train_SpaCy_Model.ipynb](Q3_Train_SpaCy_Model.ipynb)
 
 The evaluation script is in this notebook : [Q3_Test_SpaCy_Model.ipynb](Q3_Test_SpaCy_Model.ipynb)
+
+After running the training for 100 epochs these are the results
 
 Training results
 ```
@@ -28,8 +39,10 @@ Evaluation results
 0.826	0.824	0.825
 ```
 
-
 ### Q4. Using FastAPI web framework to provide APIs to our intention model.
+
+We chose to deploy our model using FastAPI since it proved to be better performing than other models.
+Check [here](# Performance testing Flask vs Bottle vs Fast API.) for our API benchmarks
 
 The docker image is available on DockerHub: [link](https://hub.docker.com/repository/docker/csj0oe/mlops-wiidii)
 
@@ -45,10 +58,9 @@ docker run -d -p 8000:8000 intentclassication
 
 Server is now listening on http://localhost:8000.
 
-- To check documentation of the API, check [http://localhost:8080/docs](http://localhost:8080/docs)
-- To test the API, check [http://localhost:8080/api/intent?sentence=une%phrase](http://localhost:8080/api/intent/?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives)
+- To check documentation of the API, check [http://localhost:8000/docs](http://localhost:8000/docs)
+- To test the API, check [http://localhost:8000/api/intent?sentence=une%phrase](http://localhost:8000/api/intent/?sentence=J%27ai%20besoin%20d%27un%20restaurant%20italien%20pour%20ce%20soir,%20nous%20serons%204%20convives)
 
-<!-- ![Testing API](images/testing1.PNG =250) -->
 <img src="images/testing.png" width="600">
 
 
@@ -63,11 +75,6 @@ We configured Locust to simulate 1000 users with spawn rate equals to 10 users p
 Spawn rate = 10 users/second
 Number Users = 1000
 ```
-
-<!-- We are using , an ASGI server implementation, using uvloop and httptools.
-The screenshot below depicts the test result. -->
-<!-- ![Locust stats](scrots/locust_stats.png)
-![Locust](scrots/locust.png) -->
 
 The APIs we are testing use different standard:
 
