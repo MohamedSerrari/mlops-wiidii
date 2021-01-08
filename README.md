@@ -44,7 +44,7 @@ Evaluation results
 ### Q4. Using FastAPI web framework to provide APIs to our intention model.
 
 We chose to deploy our model using FastAPI since it proved to be better performing than other models.
-Check [here](#performance-testing-flask-vs-bottle-vs-fast-api.) for our API benchmarks.
+Check [here](#-performance-testing-flask-vs-bottle-vs-fast-api) for our API benchmarks.
 
 The docker image is available on DockerHub: [link](https://hub.docker.com/repository/docker/csj0oe/mlops-wiidii)
 
@@ -66,7 +66,7 @@ Server is now listening on http://localhost:8000.
 <img src="images/testing.png" width="600">
 
 
-# Performance testing Flask vs Bottle vs Fast API.
+# Performance testing Flask vs Bottle vs Fast API
 
 In order to test the performance of the API under load, we used [Locust](https://locust.io/) as a testing tool.
 
