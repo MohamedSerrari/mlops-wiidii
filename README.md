@@ -1,6 +1,8 @@
 # Creating NLU API for intent classification
 
-## This repo contains multiple notebooks and scripts dealing with the problematics we faced while creating an NLU API for intent classification.
+### Itroduction:
+
+This repo contains multiple notebooks and scripts dealing with the problematics we faced while creating an NLU API for intent classification.
 
 ### Q1. Analysing the training and evaluation data.
 
@@ -12,7 +14,7 @@ Check this notebook : [Q1_data_analysis.ipynb](Q1_data_analysis.ipynb)
 ### Q2. Evaluating a pretrained model.
 
 In order to evaluate the performance of the model in provided docker image,
-we created a python notebook that calls the api using the sentences from the [testing set](data/testing_set.json)
+we created a python notebook that calls the api using the sentences from the [testing_set.json](data/testing_set.json)
 and stores the responses in the file [testing_model_predictions.json](data/testing_model_predictions.json)
 
 Check this notebook : [Q1_evaluating_model.ipynb](Q1_evaluating_model.ipynb)
@@ -25,7 +27,7 @@ The training script is in this notebook : [Q3_Train_SpaCy_Model.ipynb](Q3_Train_
 
 The evaluation script is in this notebook : [Q3_Test_SpaCy_Model.ipynb](Q3_Test_SpaCy_Model.ipynb)
 
-After running the training for 100 epochs these are the results
+After running the training for 100 epochs these are the results:
 
 Training results
 ```
@@ -42,7 +44,7 @@ Evaluation results
 ### Q4. Using FastAPI web framework to provide APIs to our intention model.
 
 We chose to deploy our model using FastAPI since it proved to be better performing than other models.
-Check [here](# Performance testing Flask vs Bottle vs Fast API.) for our API benchmarks
+Check [here](#performance-testing-flask-vs-bottle-vs-fast-api.) for our API benchmarks.
 
 The docker image is available on DockerHub: [link](https://hub.docker.com/repository/docker/csj0oe/mlops-wiidii)
 
@@ -67,7 +69,6 @@ Server is now listening on http://localhost:8000.
 # Performance testing Flask vs Bottle vs Fast API.
 
 In order to test the performance of the API under load, we used [Locust](https://locust.io/) as a testing tool.
-
 
 We configured Locust to simulate 1000 users with spawn rate equals to 10 users per second.
 
